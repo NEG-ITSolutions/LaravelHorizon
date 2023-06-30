@@ -11,7 +11,7 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
-} catch (e) {}
+} catch (e) { }
 
 let token = document.head.querySelector('meta[name="csrf-token"]');
 
@@ -44,6 +44,9 @@ Vue.component('vue-json-pretty', VueJsonPretty);
 Vue.component('alert', require('./components/Alert.vue').default);
 Vue.component('scheme-toggler', require('./components/SchemeToggler.vue').default);
 
+const app = Vue.component('app', require('./components/App.vue').default);
+const root = document.getElementById('horizon');
+
 Vue.mixin(Base);
 
 Vue.directive('tooltip', function (el, binding) {
@@ -55,10 +58,18 @@ Vue.directive('tooltip', function (el, binding) {
 });
 
 new Vue({
-    el: '#horizon',
+    el: root,
 
     router,
 
+    render: (createElement) =>
+        createElement(app, {
+            props: {
+                appName: root.dataset.appName,
+                assetsAreCurrent: root.dataset.assetsAreCurrent,
+                isDownForMaintenance: root.dataset.isDownForMaintenance,
+            },
+        }),
     data() {
         return {
             alert: {
