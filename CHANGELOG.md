@@ -1,6 +1,42 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/horizon/compare/v5.18.0...5.x)
+## [Unreleased](https://github.com/laravel/horizon/compare/v5.21.3...5.x)
+
+## [v5.21.3](https://github.com/laravel/horizon/compare/v5.21.2...v5.21.3) - 2023-10-27
+
+- Ensure out of memory events are raised before exiting the process by [@jameshulse](https://github.com/jameshulse) in https://github.com/laravel/horizon/pull/1341
+
+## [v5.21.2](https://github.com/laravel/horizon/compare/v5.21.1...v5.21.2) - 2023-10-17
+
+- Fix the job repository class based on service bindings by [@daison12006013](https://github.com/daison12006013) in https://github.com/laravel/horizon/pull/1335
+
+## [v5.21.1](https://github.com/laravel/horizon/compare/v5.21.0...v5.21.1) - 2023-09-19
+
+- Fixing Bug in Clear Metrics by [@joaopalopes24](https://github.com/joaopalopes24) in https://github.com/laravel/horizon/pull/1319
+
+## [v5.21.0](https://github.com/laravel/horizon/compare/v5.20.1...v5.21.0) - 2023-09-18
+
+- Add `horizon:reset-metrics` command by [@trevorgehman](https://github.com/trevorgehman) in https://github.com/laravel/horizon/pull/1318
+
+## [v5.20.1](https://github.com/laravel/horizon/compare/v5.20.0...v5.20.1) - 2023-09-12
+
+- Use available `batch.processedJobs` value from `Illuminate\Bus\Batch` by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/horizon/pull/1315
+
+## [v5.20.0](https://github.com/laravel/horizon/compare/v5.19.2...v5.20.0) - 2023-08-30
+
+- Throws `Laravel\Horizon\Exceptions\ForbiddenException` on unauthorized access by [@joelbutcher](https://github.com/joelbutcher) in https://github.com/laravel/horizon/pull/1308
+
+## [v5.19.2](https://github.com/laravel/horizon/compare/v5.19.1...v5.19.2) - 2023-08-29
+
+- Set 0 as the default runtime of the job by [@AsemAlalami](https://github.com/AsemAlalami) in https://github.com/laravel/horizon/pull/1307
+
+## [v5.19.1](https://github.com/laravel/horizon/compare/v5.19.0...v5.19.1) - 2023-08-09
+
+- Handle non-array parameters for "queue" setting in supervisor config by [@PrinsFrank](https://github.com/PrinsFrank) in https://github.com/laravel/horizon/pull/1299
+
+## [v5.19.0](https://github.com/laravel/horizon/compare/v5.18.0...v5.19.0) - 2023-07-14
+
+- Make sure that missing supervisors are correctly displayed when using multiple environments by [@PrinsFrank](https://github.com/PrinsFrank) in https://github.com/laravel/horizon/pull/1294
 
 ## [v5.18.0](https://github.com/laravel/horizon/compare/v5.17.0...v5.18.0) - 2023-06-30
 
