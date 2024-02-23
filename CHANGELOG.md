@@ -1,6 +1,30 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/horizon/compare/v5.21.4...5.x)
+## [Unreleased](https://github.com/laravel/horizon/compare/v5.23.1...5.x)
+
+## [v5.23.1](https://github.com/laravel/horizon/compare/v5.23.0...v5.23.1) - 2024-02-20
+
+* Output console error when terminating due to memory usage by [@SanderMuller](https://github.com/SanderMuller) in https://github.com/laravel/horizon/pull/1391
+
+## [v5.23.0](https://github.com/laravel/horizon/compare/v5.22.1...v5.23.0) - 2024-02-12
+
+* [5.x] Improves console output and fixes Carbon v3 support by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/horizon/pull/1387
+
+## [v5.22.1](https://github.com/laravel/horizon/compare/v5.22.0...v5.22.1) - 2024-01-30
+
+* Make the expiration time for temporarily failed jobs configurable by [@alirezadp10](https://github.com/alirezadp10) in https://github.com/laravel/horizon/pull/1375
+* Carbon v3 support by [@driesvints](https://github.com/driesvints) in https://github.com/laravel/horizon/pull/1380
+
+## [v5.22.0](https://github.com/laravel/horizon/compare/v5.21.5...v5.22.0) - 2024-01-16
+
+* Add cache check before registering routes by [@serpentblade](https://github.com/serpentblade) in https://github.com/laravel/horizon/pull/1367
+* Fix the pagination of recent jobs list by [@kirba](https://github.com/kirba) in https://github.com/laravel/horizon/pull/1366
+* [5.x] Laravel v11 support by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/horizon/pull/1369
+* Add exit code to horizon:forget command by [@bytestream](https://github.com/bytestream) in https://github.com/laravel/horizon/pull/1370
+
+## [v5.21.5](https://github.com/laravel/horizon/compare/v5.21.4...v5.21.5) - 2023-12-29
+
+* [5.x] Pass event instance to event listeners tag() method by [@mateusjatenee](https://github.com/mateusjatenee) in https://github.com/laravel/horizon/pull/1361
 
 ## [v5.21.4](https://github.com/laravel/horizon/compare/v5.21.3...v5.21.4) - 2023-11-23
 
