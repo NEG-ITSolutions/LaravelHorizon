@@ -1,19 +1,14 @@
-import Vue from 'vue';
-import Base from './base';
 import axios from 'axios';
-import Routes from './routes';
+import Vue from 'vue/dist/vue.esm.js';
 import VueRouter from 'vue-router';
 import VueJsonPretty from 'vue-json-pretty';
+import 'vue-json-pretty/lib/styles.css';
+import Base from './base';
+import Routes from './routes';
+import Alert from './components/Alert.vue';
+import SchemeToggler from './components/SchemeToggler.vue';
 
-window.Popper = require('popper.js').default;
-
-try {
-    window.$ = window.jQuery = require('jquery');
-
-    require('bootstrap');
-} catch (e) { }
-
-let token = document.head.querySelector('meta[name="csrf-token"]');
+let token = document.head.querySelector("meta[name='csrf-token']");
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -41,21 +36,13 @@ const router = new VueRouter({
 });
 
 Vue.component('vue-json-pretty', VueJsonPretty);
-Vue.component('alert', require('./components/Alert.vue').default);
-Vue.component('scheme-toggler', require('./components/SchemeToggler.vue').default);
+Vue.component('alert', Alert);
+Vue.component('scheme-toggler', SchemeToggler);
 
 const app = Vue.component('app', require('./components/App.vue').default);
 const root = document.getElementById('horizon');
 
 Vue.mixin(Base);
-
-Vue.directive('tooltip', function (el, binding) {
-    $(el).tooltip({
-        title: binding.value,
-        placement: binding.arg,
-        trigger: 'hover',
-    });
-});
 
 new Vue({
     el: root,
@@ -66,7 +53,6 @@ new Vue({
         createElement(app, {
             props: {
                 appName: root.dataset.appName,
-                assetsAreCurrent: root.dataset.assetsAreCurrent,
                 isDownForMaintenance: root.dataset.isDownForMaintenance,
             },
         }),
@@ -83,4 +69,4 @@ new Vue({
             autoLoadsNewEntries: localStorage.autoLoadsNewEntries === '1',
         };
     },
-});
+}).$mount('#horizon');

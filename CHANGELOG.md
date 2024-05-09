@@ -1,6 +1,33 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/horizon/compare/v5.23.2...5.x)
+## [Unreleased](https://github.com/laravel/horizon/compare/v5.24.4...5.x)
+
+## [v5.24.4](https://github.com/laravel/horizon/compare/v5.24.3...v5.24.4) - 2024-05-03
+
+* [5.x] Fix #1419 by [@tmayrand](https://github.com/tmayrand) in https://github.com/laravel/horizon/pull/1424
+* Prevent infinite loop when forgetting failed jobs by [@JackWH](https://github.com/JackWH) in https://github.com/laravel/horizon/pull/1429
+* [5.x] Fix setting custom ASSET_URLs and support cache busting without integrity check by [@mmachatschek](https://github.com/mmachatschek) in https://github.com/laravel/horizon/pull/1427
+* Simplify asset story by [@timacdonald](https://github.com/timacdonald) in https://github.com/laravel/horizon/pull/1438
+
+## [v5.24.3](https://github.com/laravel/horizon/compare/v5.24.2...v5.24.3) - 2024-04-22
+
+* [5.x] Readd vite support by [@mmachatschek](https://github.com/mmachatschek) in https://github.com/laravel/horizon/pull/1421
+
+## [v5.24.2](https://github.com/laravel/horizon/compare/v5.24.1...v5.24.2) - 2024-04-17
+
+* Revert "[5.x] feature: this adds the vite integrity plugin to support assetsAreCurrent check" by [@driesvints](https://github.com/driesvints) in https://github.com/laravel/horizon/pull/1417
+* Revert "[5.x] Change Laravel Mix asset bundling to Vite setup" by [@driesvints](https://github.com/driesvints) in https://github.com/laravel/horizon/pull/1418
+
+## [v5.24.1](https://github.com/laravel/horizon/compare/v5.24.0...v5.24.1) - 2024-04-15
+
+* [5.x] Change Laravel Mix asset bundling to Vite setup by [@mmachatschek](https://github.com/mmachatschek) in https://github.com/laravel/horizon/pull/1413
+* [5.x] feature: this adds the vite integrity plugin to support assetsAreCurrent check by [@mmachatschek](https://github.com/mmachatschek) in https://github.com/laravel/horizon/pull/1415
+
+## [v5.24.0](https://github.com/laravel/horizon/compare/v5.23.2...v5.24.0) - 2024-04-09
+
+* Enhance forget command by [@jaroslavstefanec](https://github.com/jaroslavstefanec) in https://github.com/laravel/horizon/pull/1409
+* [5.x] Update to bootstrap 5.1 and drop jQuery by [@mmachatschek](https://github.com/mmachatschek) in https://github.com/laravel/horizon/pull/1405
+* Fix passing null by [@driesvints](https://github.com/driesvints) in https://github.com/laravel/horizon/pull/1412
 
 ## [v5.23.2](https://github.com/laravel/horizon/compare/v5.23.1...v5.23.2) - 2024-03-23
 
