@@ -15,7 +15,7 @@ services:
     composer_version: 2-latest
     xdebug: true
   node:
-    type: node:16
+    type: node:18
 tooling:
   npm:
     service: node
