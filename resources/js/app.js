@@ -7,6 +7,7 @@ import Base from './base';
 import Routes from './routes';
 import Alert from './components/Alert.vue';
 import SchemeToggler from './components/SchemeToggler.vue';
+import App from './components/App.vue';
 
 let token = document.head.querySelector("meta[name='csrf-token']");
 
@@ -39,7 +40,7 @@ Vue.component('vue-json-pretty', VueJsonPretty);
 Vue.component('alert', Alert);
 Vue.component('scheme-toggler', SchemeToggler);
 
-const app = Vue.component('app', require('./components/App.vue').default);
+const app = Vue.component('app', App);
 const root = document.getElementById('horizon');
 
 Vue.mixin(Base);
