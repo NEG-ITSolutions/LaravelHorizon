@@ -1,6 +1,31 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/horizon/compare/v5.24.4...5.x)
+## [Unreleased](https://github.com/laravel/horizon/compare/v5.27.1...5.x)
+
+## [v5.27.1](https://github.com/laravel/horizon/compare/v5.27.0...v5.27.1) - 2024-08-05
+
+* Fix error when loading monitoried tags page(#1478) by [@therobfonz](https://github.com/therobfonz) in https://github.com/laravel/horizon/pull/1485
+
+## [v5.27.0](https://github.com/laravel/horizon/compare/v5.26.0...v5.27.0) - 2024-07-26
+
+* Extend Slack Notification to work with Slack Apps for Laravel 11 support by [@travisricks](https://github.com/travisricks) in https://github.com/laravel/horizon/pull/1481
+
+## [v5.26.0](https://github.com/laravel/horizon/compare/v5.25.0...v5.26.0) - 2024-07-22
+
+* [5.x] Adding scaling to balance = false by [@dbpolito](https://github.com/dbpolito) in https://github.com/laravel/horizon/pull/1473
+
+## [v5.25.0](https://github.com/laravel/horizon/compare/v5.24.6...v5.25.0) - 2024-07-05
+
+* Different exit codes for paused and inactive horizon status by [@CanvasCompanyHylke](https://github.com/CanvasCompanyHylke) in https://github.com/laravel/horizon/pull/1471
+
+## [v5.24.6](https://github.com/laravel/horizon/compare/v5.24.5...v5.24.6) - 2024-06-25
+
+* Remove leftover publishing command in install command after simplified assets. by [@joveice](https://github.com/joveice) in https://github.com/laravel/horizon/pull/1468
+
+## [v5.24.5](https://github.com/laravel/horizon/compare/v5.24.4...v5.24.5) - 2024-05-31
+
+* Fixes tests when using Process 7.1 by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/horizon/pull/1456
+* Update runningProcesses to also include terminating processes by [@nckrtl](https://github.com/nckrtl) in https://github.com/laravel/horizon/pull/1454
 
 ## [v5.24.4](https://github.com/laravel/horizon/compare/v5.24.3...v5.24.4) - 2024-05-03
 
