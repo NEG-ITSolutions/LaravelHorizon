@@ -1,27 +1,23 @@
-name: horizon
-recipe: laravel
-config:
-  php: "8.1"
-  webroot: public
-  via: nginx
-  cache: redis
-  database: mysql:8.0
-  xdebug: true
-  # config:
-  #   vhosts: .lando/nginx.conf
+name: laravel_horizon
 services:
-  appserver:
-    type: php:8.1
-    composer_version: 2-latest
-    xdebug: true
   node:
     type: node:18
+    ssl: true
+    ports:
+    - 3020:3020
+  # web:
+  #   type: nginx
+  #   ssl: true  
+proxy:
+  node: 
+    - laravel_horizon.lndo.site:3020
 tooling:
   npm:
     service: node
   npx:
     service: node
+  fdk:
+    service: node
   npm_prod:
-    description: Build messages.json and run npm production
-    cmd:
-      - node: npm run prod
+    service: node
+    cmd: npm run build
