@@ -1,9 +1,14 @@
-<script type="text/ecmascript-6">
+<script>
+import { inject } from 'vue';
+
 export default {
   props: ["isDownForMaintenance", "appName"],
-  data() {
+  setup() {
+    // Inject the globalState to access alert
+    const globalState = inject('globalState');
+
     return {
-      alert: this.$root.alert,
+      alert: globalState.alert,
     };
   },
 };
