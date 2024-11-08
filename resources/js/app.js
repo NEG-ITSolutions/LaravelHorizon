@@ -1,13 +1,12 @@
+import { createApp, reactive } from 'vue';
+import { createRouter, createWebHistory } from 'vue-router';
 import axios from 'axios';
-import Vue from 'vue/dist/vue.esm.js';
-import VueRouter from 'vue-router';
-import VueJsonPretty from 'vue-json-pretty';
-import 'vue-json-pretty/lib/styles.css';
-import Base from './base';
 import Routes from './routes';
 import Alert from './components/Alert.vue';
 import SchemeToggler from './components/SchemeToggler.vue';
 import App from './components/App.vue';
+import VueJsonPretty from 'vue-json-pretty';
+import Base from './base';
 
 let token = document.head.querySelector("meta[name='csrf-token']");
 
@@ -16,10 +15,6 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 if (token) {
     axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 }
-
-Vue.use(VueRouter);
-
-Vue.prototype.$http = axios.create();
 
 window.Horizon.basePath = '/' + window.Horizon.path;
 
@@ -30,44 +25,39 @@ if (window.Horizon.path === '' || window.Horizon.path === '/') {
     window.Horizon.basePath = '';
 }
 
-const router = new VueRouter({
+const router = createRouter({
+    history: createWebHistory(routerBasePath),
     routes: Routes,
-    mode: 'history',
-    base: routerBasePath,
 });
 
-Vue.component('vue-json-pretty', VueJsonPretty);
-Vue.component('alert', Alert);
-Vue.component('scheme-toggler', SchemeToggler);
+const app = createApp(App);
 
-const app = Vue.component('app', App);
+app.config.globalProperties.$http = axios.create();
+
+app.component('vue-json-pretty', VueJsonPretty);
+app.component('alert', Alert);
+app.component('scheme-toggler', SchemeToggler);
+
+app.mixin(Base);
+
 const root = document.getElementById('horizon');
 
-Vue.mixin(Base);
+app.provide('appProps', {
+    appName: root.dataset.appName,
+    isDownForMaintenance: root.dataset.isDownForMaintenance,
+});
 
-new Vue({
-    el: root,
-
-    router,
-
-    render: (createElement) =>
-        createElement(app, {
-            props: {
-                appName: root.dataset.appName,
-                isDownForMaintenance: root.dataset.isDownForMaintenance,
-            },
-        }),
-    data() {
-        return {
-            alert: {
-                type: null,
-                autoClose: 0,
-                message: '',
-                confirmationProceed: null,
-                confirmationCancel: null,
-            },
-
-            autoLoadsNewEntries: localStorage.autoLoadsNewEntries === '1',
-        };
+const globalState = reactive({
+    alert: {
+        type: null,
+        autoClose: 0,
+        message: '',
+        confirmationProceed: null,
+        confirmationCancel: null,
     },
-}).$mount('#horizon');
+    autoLoadsNewEntries: localStorage.autoLoadsNewEntries === '1',
+});
+
+app.provide('globalState', globalState);
+
+app.use(router).mount('#horizon');

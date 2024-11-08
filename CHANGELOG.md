@@ -1,6 +1,33 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/horizon/compare/v5.27.1...5.x)
+## [Unreleased](https://github.com/laravel/horizon/compare/v5.29.2...5.x)
+
+## [v5.29.2](https://github.com/laravel/horizon/compare/v5.29.1...v5.29.2) - 2024-10-16
+
+* [5.x] Use `#[\Override]` PHP Attribute to detect breaking changes by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/horizon/pull/1506
+* Improvement: Wont spawn extra queues by [@alexmontoanelli](https://github.com/alexmontoanelli) in https://github.com/laravel/horizon/pull/1508
+
+## [v5.29.1](https://github.com/laravel/horizon/compare/v5.29.0...v5.29.1) - 2024-10-08
+
+* Update logo to support dark/light theme by [@milewski](https://github.com/milewski) in https://github.com/laravel/horizon/pull/1500
+* Fix pop() method signature laravel/framework#53063 by [@it-can](https://github.com/it-can) in https://github.com/laravel/horizon/pull/1504
+
+## [v5.29.0](https://github.com/laravel/horizon/compare/v5.28.1...v5.29.0) - 2024-09-24
+
+* [5.x] Upgrade from Vue 2 to Vue 3 by [@osbre](https://github.com/osbre) in https://github.com/laravel/horizon/pull/1496
+* Refresh the logo by [@osbre](https://github.com/osbre) in https://github.com/laravel/horizon/pull/1497
+* Bump vite from 5.2.10 to 5.4.6 by [@dependabot](https://github.com/dependabot) in https://github.com/laravel/horizon/pull/1498
+* Bump rollup from 4.21.3 to 4.22.4 by [@dependabot](https://github.com/dependabot) in https://github.com/laravel/horizon/pull/1499
+
+## [v5.28.1](https://github.com/laravel/horizon/compare/v5.28.0...v5.28.1) - 2024-09-04
+
+* [5.x] Reanimate asset compilation by [@daniser](https://github.com/daniser) in https://github.com/laravel/horizon/pull/1495
+
+## [v5.28.0](https://github.com/laravel/horizon/compare/v5.27.1...v5.28.0) - 2024-09-03
+
+* Create status command for individual supervisors by [@mfrieswyk](https://github.com/mfrieswyk) in https://github.com/laravel/horizon/pull/1467
+* [5.x] Use `match` expression by [@xurshudyan](https://github.com/xurshudyan) in https://github.com/laravel/horizon/pull/1487
+* FIX #1488 : Focused line gets hightlighted [remove .vjs-tree-node:hover] by [@srennou](https://github.com/srennou) in https://github.com/laravel/horizon/pull/1492
 
 ## [v5.27.1](https://github.com/laravel/horizon/compare/v5.27.0...v5.27.1) - 2024-08-05
 

@@ -7,8 +7,8 @@
         "watch": "vite build --watch"
     },
     "devDependencies": {
-        "@vitejs/plugin-vue2": "^2.3.1",
-        "axios": "^1.6.8",
+        "@vitejs/plugin-vue": "^5.1.3",
+        "axios": "^1.7.4",
         "bootstrap": "~5.1.3",
         "chart.js": "^2.9.4",
         "highlight.js": "^10.7.3",
@@ -18,9 +18,9 @@
         "phpunserialize": "^1.3.0",
         "sass": "^1.74.1",
         "sql-formatter": "^4.0.2",
-        "vite": "^5.2.8",
-        "vue": "^2.7.16",
-        "vue-json-pretty": "^1.9.5",
-        "vue-router": "^3.6.5"
+        "vite": "^5.4.6",
+        "vue": "^3.5.4",
+        "vue-json-pretty": "^2.4.0",
+        "vue-router": "^4.4.4"
     }
 }
