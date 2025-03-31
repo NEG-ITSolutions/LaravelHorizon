@@ -1,6 +1,39 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/horizon/compare/v5.29.2...5.x)
+## [Unreleased](https://github.com/laravel/horizon/compare/v5.31.0...5.x)
+
+## [v5.31.0](https://github.com/laravel/horizon/compare/v5.30.3...v5.31.0) - 2025-03-04
+
+* Scale workers from min instead of max on startup by [@andre-hoffmann](https://github.com/andre-hoffmann) in https://github.com/laravel/horizon/pull/1537
+* Add `proxy_path` config for subfolder usage in Horizon's Vue front-end by [@andre-hoffmann](https://github.com/andre-hoffmann) in https://github.com/laravel/horizon/pull/1538
+
+## [v5.30.3](https://github.com/laravel/horizon/compare/v5.30.2...v5.30.3) - 2025-02-11
+
+* Supports Laravel 12 by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/horizon/pull/1532
+* Bump vite from 5.4.6 to 5.4.14 by [@dependabot](https://github.com/dependabot) in https://github.com/laravel/horizon/pull/1533
+
+## [v5.30.2](https://github.com/laravel/horizon/compare/v5.30.1...v5.30.2) - 2025-01-13
+
+* fix: cluster redis eval return false by [@seth-shi](https://github.com/seth-shi) in https://github.com/laravel/horizon/pull/1526
+
+## [v5.30.1](https://github.com/laravel/horizon/compare/v5.30.0...v5.30.1) - 2024-12-13
+
+* fix predis `clear()` when using redis 7.4 by [@vintagesucks](https://github.com/vintagesucks) in https://github.com/laravel/horizon/pull/1522
+
+## [v5.30.0](https://github.com/laravel/horizon/compare/v5.29.4...v5.30.0) - 2024-12-06
+
+* Add support for notification class overrides by [@lukemorcom](https://github.com/lukemorcom) in https://github.com/laravel/horizon/pull/1518
+* Replace implicitly nullable parameters for PHP 8.4 by [@txdFabio](https://github.com/txdFabio) in https://github.com/laravel/horizon/pull/1520
+
+## [v5.29.4](https://github.com/laravel/horizon/compare/v5.29.3...v5.29.4) - 2024-11-21
+
+* Allow to specify connection in ClearCommand by [@antennaio](https://github.com/antennaio) in https://github.com/laravel/horizon/pull/1516
+* [5.x] Supports PHP 8.4 by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/horizon/pull/1507
+
+## [v5.29.3](https://github.com/laravel/horizon/compare/v5.29.2...v5.29.3) - 2024-11-07
+
+* Test Improvements by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/horizon/pull/1511
+* Remove the verbiage to publish assets in the upgrade guide by [@wsamoht](https://github.com/wsamoht) in https://github.com/laravel/horizon/pull/1515
 
 ## [v5.29.2](https://github.com/laravel/horizon/compare/v5.29.1...v5.29.2) - 2024-10-16
 
