@@ -49,7 +49,7 @@ export default {
             class="btn btn-muted ml-2"
             :class="{ active: autoLoadsNewEntries }"
             v-on:click.prevent="autoLoadNewEntries"
-            title="Auto Load Entries"
+            title="Auto Load New Entries"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

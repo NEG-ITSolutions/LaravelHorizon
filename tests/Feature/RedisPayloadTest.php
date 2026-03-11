@@ -125,9 +125,6 @@ class RedisPayloadTest extends IntegrationTest
         $this->assertEquals([FakeModel::class.':42'], $JobPayload->decoded['tags']);
     }
 
-    /**
-     * @requires PHP 7.4
-     */
     public function test_tags_are_correctly_determined_for_listeners_with_property_types()
     {
         $JobPayload = new JobPayload(json_encode(['id' => 1]));
@@ -198,6 +195,15 @@ class RedisPayloadTest extends IntegrationTest
         $mailableMock = Mockery::mock(SilencedMailable::class);
         config(['horizon.silenced' => [get_class($mailableMock)]]);
         $JobPayload->prepare(new SendQueuedMailable($mailableMock));
+        $this->assertTrue($JobPayload->isSilenced());
+    }
+
+    public function test_it_determines_if_job_is_silenced_correctly_by_tags()
+    {
+        $JobPayload = new JobPayload(json_encode(['id' => 1]));
+
+        config(['horizon.silenced_tags' => ['first', 'noisy']]);
+        $JobPayload->prepare(new FakeJobWithTagsMethod());
         $this->assertTrue($JobPayload->isSilenced());
     }
 }

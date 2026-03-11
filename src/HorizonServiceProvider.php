@@ -8,6 +8,7 @@ use Illuminate\Queue\QueueManager;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Horizon\Connectors\RedisConnector;
+use Laravel\Sentinel\Http\Middleware\SentinelMiddleware;
 
 class HorizonServiceProvider extends ServiceProvider
 {
@@ -20,11 +21,29 @@ class HorizonServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Route::middlewareGroup('horizon', [
+            SentinelMiddleware::class.':horizon',
+            ...config('horizon.middleware', ['web']),
+        ]);
+
+        $this->normalizeConfig();
         $this->registerEvents();
         $this->registerRoutes();
         $this->registerResources();
         $this->offerPublishing();
         $this->registerCommands();
+    }
+
+    /**
+     * Normalize the Horizon configuration.
+     *
+     * @return void
+     */
+    protected function normalizeConfig()
+    {
+        if (! $this->app['config']->get('horizon.name')) {
+            $this->app['config']->set('horizon.name', $this->app['config']->get('app.name'));
+        }
     }
 
     /**
@@ -58,7 +77,7 @@ class HorizonServiceProvider extends ServiceProvider
             'domain' => config('horizon.domain', null),
             'prefix' => config('horizon.path'),
             'namespace' => 'Laravel\Horizon\Http\Controllers',
-            'middleware' => config('horizon.middleware', 'web'),
+            'middleware' => 'horizon',
         ], function () {
             $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         });
@@ -109,21 +128,28 @@ class HorizonServiceProvider extends ServiceProvider
                 Console\HorizonCommand::class,
                 Console\InstallCommand::class,
                 Console\ListCommand::class,
+                Console\ListenCommand::class,
                 Console\PauseCommand::class,
                 Console\PauseSupervisorCommand::class,
                 Console\PublishCommand::class,
                 Console\PurgeCommand::class,
-                Console\StatusCommand::class,
                 Console\SupervisorCommand::class,
                 Console\SupervisorStatusCommand::class,
-                Console\SupervisorsCommand::class,
                 Console\TerminateCommand::class,
                 Console\TimeoutCommand::class,
                 Console\WorkCommand::class,
             ]);
+
+            if (method_exists($this, 'reloads')) {
+                $this->reloads('horizon:terminate', 'queue');
+            }
         }
 
-        $this->commands([Console\SnapshotCommand::class]);
+        $this->commands([
+            Console\SnapshotCommand::class,
+            Console\StatusCommand::class,
+            Console\SupervisorsCommand::class,
+        ]);
     }
 
     /**
@@ -169,8 +195,8 @@ class HorizonServiceProvider extends ServiceProvider
     {
         foreach ($this->serviceBindings as $key => $value) {
             is_numeric($key)
-                    ? $this->app->singleton($value)
-                    : $this->app->singleton($key, $value);
+                ? $this->app->singleton($value)
+                : $this->app->singleton($key, $value);
         }
     }
 

@@ -1,6 +1,172 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/horizon/compare/v5.31.0...5.x)
+## [Unreleased](https://github.com/laravel/horizon/compare/v5.45.3...5.x)
+
+## [v5.45.3](https://github.com/laravel/horizon/compare/v5.45.2...v5.45.3) - 2026-03-11
+
+* Refine Horizon skill description by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/horizon/pull/1727
+* Update configure-horizon skill examples and command references by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/horizon/pull/1725
+
+## [v5.45.2](https://github.com/laravel/horizon/compare/v5.45.1...v5.45.2) - 2026-03-10
+
+**Full Changelog**: https://github.com/laravel/horizon/compare/v5.45.1...v5.45.2
+
+## [v5.45.1](https://github.com/laravel/horizon/compare/v5.45.0...v5.45.1) - 2026-03-06
+
+* [5.x] Fix runaway memory usage with `horizon:listen` by [@cosmastech](https://github.com/cosmastech) in https://github.com/laravel/horizon/pull/1716
+* Bump rollup from 4.22.4 to 4.59.0 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1717
+* Reduce risks of `localStorage` collision by [@meduzen](https://github.com/meduzen) in https://github.com/laravel/horizon/pull/1719
+* return exit code from terminate command by [@webard](https://github.com/webard) in https://github.com/laravel/horizon/pull/1718
+* Bump immutable from 4.3.5 to 4.3.8 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1722
+* Show delayed badge for jobs pending retry backoff by [@SanderMuller](https://github.com/SanderMuller) in https://github.com/laravel/horizon/pull/1721
+* Add configure-horizon Boost skill by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/horizon/pull/1723
+
+## [v5.45.0](https://github.com/laravel/horizon/compare/v5.44.0...v5.45.0) - 2026-02-21
+
+* [5.x] Fail fast when Redis is not installed by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1705
+* [5.x] Supports restricting private tunnel requests for `local` environment by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/horizon/pull/1691
+* [5.x] Improve digits readability by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1706
+* [5.x] Mark `horizon:publish` command as deprecated by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1708
+* Fix wildcard pattern matching in file watcher by [@markieo1](https://github.com/markieo1) in https://github.com/laravel/horizon/pull/1712
+* [5.x] Add support for batch searching by [@JoeyMckenzie](https://github.com/JoeyMckenzie) in https://github.com/laravel/horizon/pull/1714
+
+## [v5.44.0](https://github.com/laravel/horizon/compare/v5.43.0...v5.44.0) - 2026-02-10
+
+* [5.x] Add Node.js executable validation before starting file watcher by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1699
+* [5.x] Supports Laravel 13 by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/horizon/pull/1700
+* [5.x] Fix incorrect `@return` tag in Supervisor property docblock by [@eranishojha](https://github.com/eranishojha) in https://github.com/laravel/horizon/pull/1701
+* [5.x] Guard `RedisStore::scan()` results against boolean failures by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1703
+
+## [v5.43.0](https://github.com/laravel/horizon/compare/v5.42.0...v5.43.0) - 2026-01-15
+
+* Add `horizon:listen` command by [@mathiasgrimm](https://github.com/mathiasgrimm) in https://github.com/laravel/horizon/pull/1689
+
+## [v5.42.0](https://github.com/laravel/horizon/compare/v5.41.0...v5.42.0) - 2026-01-06
+
+* Fix race condition that causes jobs to stay in 'pending' state by [@Jeroenwv](https://github.com/Jeroenwv) in https://github.com/laravel/horizon/pull/1682
+* Handle non-array Redis HMGET responses during startup by [@thecaliskan](https://github.com/thecaliskan) in https://github.com/laravel/horizon/pull/1684
+* [5.x] Fix `calculateTimeToClear` return type by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1685
+* Update .gitattributes to ignore more files by [@devfrey](https://github.com/devfrey) in https://github.com/laravel/horizon/pull/1688
+
+## [v5.41.0](https://github.com/laravel/horizon/compare/v5.40.2...v5.41.0) - 2025-12-14
+
+* [5.x] Update gitignore by [@jackbayliss](https://github.com/jackbayliss) in https://github.com/laravel/horizon/pull/1672
+* fix: guard setAccessible() call for PHP 8.5+ by [@deligoez](https://github.com/deligoez) in https://github.com/laravel/horizon/pull/1676
+* Fix: Unable to clear a queue with a lot of data by [@Vishwaraj123](https://github.com/Vishwaraj123) in https://github.com/laravel/horizon/pull/1679
+
+## [v5.40.2](https://github.com/laravel/horizon/compare/v5.40.1...v5.40.2) - 2025-11-28
+
+* [5.x] Revert `#1657` by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1669
+* Add reload command by [@barryvdh](https://github.com/barryvdh) in https://github.com/laravel/horizon/pull/1671
+
+## [v5.40.1](https://github.com/laravel/horizon/compare/v5.40.0...v5.40.1) - 2025-11-25
+
+* [5.x] PHP 8.5 Compatibility by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/horizon/pull/1667
+
+## [v5.40.0](https://github.com/laravel/horizon/compare/v5.39.0...v5.40.0) - 2025-11-11
+
+* [5.x] Refactor string capitalization to use global `upperFirst()` helper by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1656
+* [5.x] Make Job IDs Clickable in the `Recent Retries` Table by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1657
+* [5.x] Add job title to failed jobs table in job batch details page by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1661
+
+## [v5.39.0](https://github.com/laravel/horizon/compare/v5.38.0...v5.39.0) - 2025-11-04
+
+* [5.x] Hide `Load New Entries` button when auto loading is enabled by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1644
+* [5.x] Add `Connection` column to Supervisors table in Horizon panel dashboard by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1646
+* [5.x] Add Margin Left to Delayed Label by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1648
+* [5.x] Improve more tags display in Horizon jobs list by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1650
+* [5.x] Rename table column for clarity by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1655
+
+## [v5.38.0](https://github.com/laravel/horizon/compare/v5.37.0...v5.38.0) - 2025-10-26
+
+* [5.x] Improve the button title by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1638
+* [5.x] Add `Connection` parameter to job details page by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1640
+
+## [v5.37.0](https://github.com/laravel/horizon/compare/v5.36.0...v5.37.0) - 2025-10-21
+
+* [5.x] Remove unnecessary `SupervisorLooped` event param by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1632
+* [5.x] Update docblock to reflect int|void return type by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1631
+* Fix the pagination of failed jobs list by [@LucaRed](https://github.com/LucaRed) in https://github.com/laravel/horizon/pull/1630
+* Bump vite from 5.4.20 to 5.4.21 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1637
+
+## [v5.36.0](https://github.com/laravel/horizon/compare/v5.35.2...v5.36.0) - 2025-10-10
+
+* Allow naming of horizon instances by [@timacdonald](https://github.com/timacdonald) in https://github.com/laravel/horizon/pull/1621
+
+## [v5.35.2](https://github.com/laravel/horizon/compare/v5.35.1...v5.35.2) - 2025-10-08
+
+* [5.x] Revert `#1615` by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1620
+
+## [v5.35.1](https://github.com/laravel/horizon/compare/v5.35.0...v5.35.1) - 2025-10-07
+
+* [5.x] Fixes `#1616` by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1617
+
+## [v5.35.0](https://github.com/laravel/horizon/compare/v5.34.0...v5.35.0) - 2025-10-04
+
+* Add --json option to horizon:work to match queue:work functionality by [@noatudor](https://github.com/noatudor) in https://github.com/laravel/horizon/pull/1612
+* [5.x] Update docblock to reflect int|void return type by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1613
+* [5.x] Prevent using the reserved `horizon` Redis connection name by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1615
+
+## [v5.34.0](https://github.com/laravel/horizon/compare/v5.33.5...v5.34.0) - 2025-09-12
+
+* [5.x] Improve docblocks for nullable parameters by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1601
+* [5.x] Add support for `silenced_tags` configuration in Horizon jobs by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1602
+* Bump vite from 5.4.14 to 5.4.20 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1604
+* [5.x] Improve `MarkJobAsCompleteTest` to properly test `silenced_tags` configuration by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1603
+
+## [v5.33.5](https://github.com/laravel/horizon/compare/v5.33.4...v5.33.5) - 2025-08-31
+
+* [5.x] Fix batches infinite loading by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1589
+* [5.x] Make "no jobs" messages consistent across job types in Horizon panel by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1590
+* [5.x] standardize multiline constructor parameters by [@browner12](https://github.com/browner12) in https://github.com/laravel/horizon/pull/1593
+* [5.x] fix ternary newline indentation by [@browner12](https://github.com/browner12) in https://github.com/laravel/horizon/pull/1592
+* [5.x] use normal formatting for method signature by [@browner12](https://github.com/browner12) in https://github.com/laravel/horizon/pull/1596
+* [5.x] consistent multiline chaining by [@browner12](https://github.com/browner12) in https://github.com/laravel/horizon/pull/1594
+* [5.x] use single indentation by [@browner12](https://github.com/browner12) in https://github.com/laravel/horizon/pull/1595
+* [5.x] use promoted properties for `Jobs` directory by [@browner12](https://github.com/browner12) in https://github.com/laravel/horizon/pull/1597
+
+## [v5.33.4](https://github.com/laravel/horizon/compare/v5.33.3...v5.33.4) - 2025-08-25
+
+* [5.x] Fix failed jobs infinite loading by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1584
+
+## [v5.33.3](https://github.com/laravel/horizon/compare/v5.33.2...v5.33.3) - 2025-08-11
+
+* Fix type casting for Carbon 3 compatibility in RedisJobRepository by [@guestpectacular](https://github.com/guestpectacular) in https://github.com/laravel/horizon/pull/1580
+
+## [v5.33.2](https://github.com/laravel/horizon/compare/v5.33.1...v5.33.2) - 2025-08-05
+
+* Fix null to Str::contains deprecation by [@ziming](https://github.com/ziming) in https://github.com/laravel/horizon/pull/1571
+* Bump form-data from 4.0.0 to 4.0.4 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1572
+* Fix MonitorWaitTimes to respect one-minute monitoring interval by [@SanderMuller](https://github.com/SanderMuller) in https://github.com/laravel/horizon/pull/1574
+* Add PHPUnit 12 compatibility while maintaining backwards compatibility by [@DGarbs51](https://github.com/DGarbs51) in https://github.com/laravel/horizon/pull/1576
+
+## [v5.33.1](https://github.com/laravel/horizon/compare/v5.33.0...v5.33.1) - 2025-06-16
+
+* Cooldown Worker Only on Failed Processes by [@dbpolito](https://github.com/dbpolito) in https://github.com/laravel/horizon/pull/1566
+
+## [v5.33.0](https://github.com/laravel/horizon/compare/v5.32.1...v5.33.0) - 2025-06-09
+
+* Allowed Horizon Status & Supervisors commands to run outside console by [@abisheknaagendra](https://github.com/abisheknaagendra) in https://github.com/laravel/horizon/pull/1564
+* feat: add Poll component to standardize polling behavior by [@mathiasgrimm](https://github.com/mathiasgrimm) in https://github.com/laravel/horizon/pull/1556
+
+## [v5.32.1](https://github.com/laravel/horizon/compare/v5.32.0...v5.32.1) - 2025-05-19
+
+* Make $user = null the default in viewHorizon gate closure for better DX by [@mitoop](https://github.com/mitoop) in https://github.com/laravel/horizon/pull/1554
+* Bump axios from 1.7.4 to 1.8.2 by [@dependabot](https://github.com/dependabot) in https://github.com/laravel/horizon/pull/1557
+
+## [v5.32.0](https://github.com/laravel/horizon/compare/v5.31.2...v5.32.0) - 2025-05-09
+
+* [5.x] Store memory used when dispatching `SupervisorOutOfMemory` by [@cosmastech](https://github.com/cosmastech) in https://github.com/laravel/horizon/pull/1550
+* Set AutoScaler logic to target process scaling based on queue size wh… by [@nick-potts](https://github.com/nick-potts) in https://github.com/laravel/horizon/pull/1552
+
+## [v5.31.2](https://github.com/laravel/horizon/compare/v5.31.1...v5.31.2) - 2025-04-18
+
+* Update logo by [@iamdavidhill](https://github.com/iamdavidhill) in https://github.com/laravel/horizon/pull/1543
+* Fixed deprecation warning  `Creation of dynamic property Laravel\Horizon\SupervisorOptions::$retryAfter` by [@fkrzski](https://github.com/fkrzski) in https://github.com/laravel/horizon/pull/1548
+
+## [v5.31.1](https://github.com/laravel/horizon/compare/v5.31.0...v5.31.1) - 2025-03-16
+
+* [5.x] Specify `WorkloadRepository@get()` return type by [@cosmastech](https://github.com/cosmastech) in https://github.com/laravel/horizon/pull/1542
 
 ## [v5.31.0](https://github.com/laravel/horizon/compare/v5.30.3...v5.31.0) - 2025-03-04
 

@@ -1,6 +1,12 @@
-/vendor
-/laravel
-/node_modules
-/phpunit.xml
-composer.lock
+.DS_Store
 .phpunit.result.cache
+/.fleet
+/.idea
+/.phpunit.cache
+/phpunit.xml
+/.vscode
+/node_modules
+/vendor
+composer.phar
+composer.lock
+Thumbs.db

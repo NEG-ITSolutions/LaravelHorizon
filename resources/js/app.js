@@ -7,6 +7,7 @@ import SchemeToggler from './components/SchemeToggler.vue';
 import App from './components/App.vue';
 import VueJsonPretty from 'vue-json-pretty';
 import Base from './base';
+import Poll from './components/Poll.vue';
 
 let token = document.head.querySelector("meta[name='csrf-token']");
 
@@ -38,6 +39,7 @@ app.config.globalProperties.$http = axios.create();
 app.component('vue-json-pretty', VueJsonPretty);
 app.component('alert', Alert);
 app.component('scheme-toggler', SchemeToggler);
+app.component('poll', Poll);
 
 app.mixin(Base);
 
@@ -56,7 +58,7 @@ const globalState = reactive({
         confirmationProceed: null,
         confirmationCancel: null,
     },
-    autoLoadsNewEntries: localStorage.autoLoadsNewEntries === '1',
+    autoLoadsNewEntries: localStorage[LOCALSTORAGE_AUTOLOAD_KEY] === '1',
 });
 
 app.provide('globalState', globalState);
