@@ -9,6 +9,8 @@ import VueJsonPretty from 'vue-json-pretty';
 import Base from './base';
 import Poll from './components/Poll.vue';
 
+const LOCALSTORAGE_AUTOLOAD_KEY = 'horizonAutoLoadsNewEntries';
+
 let token = document.head.querySelector("meta[name='csrf-token']");
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
