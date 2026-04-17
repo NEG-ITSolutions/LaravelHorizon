@@ -1,6 +1,20 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/horizon/compare/v5.45.3...5.x)
+## [Unreleased](https://github.com/laravel/horizon/compare/v5.45.6...5.x)
+
+## [v5.45.6](https://github.com/laravel/horizon/compare/v5.45.5...v5.45.6) - 2026-04-14
+
+* Bump axios from 1.8.2 to 1.15.0 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1758
+* [5.x] Pass `$later` in `RedisQueue@later()` by [@cosmastech](https://github.com/cosmastech) in https://github.com/laravel/horizon/pull/1759
+
+## [v5.45.5](https://github.com/laravel/horizon/compare/v5.45.4...v5.45.5) - 2026-04-01
+
+* Bump picomatch from 2.3.1 to 2.3.2 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1748
+* Add `.npmrc` file by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/horizon/pull/1753
+
+## [v5.45.4](https://github.com/laravel/horizon/compare/v5.45.3...v5.45.4) - 2026-03-18
+
+* Remove redundant "When to Apply" section from skill body by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/horizon/pull/1729
 
 ## [v5.45.3](https://github.com/laravel/horizon/compare/v5.45.2...v5.45.3) - 2026-03-11
 
