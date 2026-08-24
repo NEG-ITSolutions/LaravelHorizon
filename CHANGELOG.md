@@ -1,6 +1,35 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/horizon/compare/v5.47.2...5.x)
+## [Unreleased](https://github.com/laravel/horizon/compare/v5.48.3...5.x)
+
+## [v5.48.3](https://github.com/laravel/horizon/compare/v5.48.2...v5.48.3) - 2026-08-10
+
+* [5.x] Fix `RedisQueue::later()` never passing the delay to the payload by [@lazerg](https://github.com/lazerg) in https://github.com/laravel/horizon/pull/1810
+
+## [v5.48.2](https://github.com/laravel/horizon/compare/v5.48.1...v5.48.2) - 2026-07-27
+
+* Bump axios from 1.16.0 to 1.18.0 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1796
+* [5.x] Fix `Laravel\Horizon\RedisQueue::later()` usage on Laravel 12.10 and lower. by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/horizon/pull/1798
+* [5.x] Fix `horizon:clear-metrics` clearing nothing on phpredis 6.1+ by [@ademola-emmanuel](https://github.com/ademola-emmanuel) in https://github.com/laravel/horizon/pull/1801
+* Bump actions/checkout from 7.0.0 to 7.0.1 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1805
+* Bump postcss from 8.5.13 to 8.5.23 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1803
+
+## [v5.48.1](https://github.com/laravel/horizon/compare/v5.48.0...v5.48.1) - 2026-07-20
+
+**Full Changelog**: https://github.com/laravel/horizon/compare/v5.48.0...v5.48.1
+
+## [v5.48.0](https://github.com/laravel/horizon/compare/v5.47.2...v5.48.0) - 2026-07-17
+
+* Add Dependabot cooldown of 5 days by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/horizon/pull/1780
+* Enable Dependabot auto-merge by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/horizon/pull/1781
+* Bump shivammathur/setup-php from 2.37.1 to 2.37.2 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1784
+* Add `registerDevCommands` helper by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/laravel/horizon/pull/1786
+* Bump form-data from 4.0.5 to 4.0.6 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1787
+* Bump actions/checkout from 6.0.3 to 7.0.0 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1788
+* Auto register dev commands by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/laravel/horizon/pull/1789
+* Fix dashboard "Max Runtime"/"Max Throughput" picking arbitrary queue by [@laravel-o11y](https://github.com/laravel-o11y) in https://github.com/laravel/horizon/pull/1791
+* Add option to set a CSP nonce for use with style and script tags by [@sgilberg](https://github.com/sgilberg) in https://github.com/laravel/horizon/pull/1792
+* Adjust CSP test for Laravel <=10 support by [@sgilberg](https://github.com/sgilberg) in https://github.com/laravel/horizon/pull/1794
 
 ## [v5.47.2](https://github.com/laravel/horizon/compare/v5.47.1...v5.47.2) - 2026-06-03
 

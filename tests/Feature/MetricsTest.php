@@ -193,6 +193,31 @@ class MetricsTest extends IntegrationTest
         );
     }
 
+    public function test_queue_with_maximum_runtime_and_throughput_compares_latest_snapshot()
+    {
+        $repository = resolve(MetricsRepository::class);
+        $connection = $repository->connection();
+
+        // Two measured queues, each with three snapshots (the case where the
+        // ZRANGE range matters — fewer than three would mask the bug). The most
+        // recent snapshot is the highest-scored member. "fast" has the greater
+        // throughput, "slow" the greater runtime, so each card must surface a
+        // different queue rather than an arbitrary one.
+        $connection->sadd('measured_queues', 'queue:fast', 'queue:slow');
+
+        foreach ([
+            'fast' => [['throughput' => 10, 'runtime' => 5], ['throughput' => 50, 'runtime' => 10], ['throughput' => 102, 'runtime' => 21]],
+            'slow' => [['throughput' => 3, 'runtime' => 100], ['throughput' => 7, 'runtime' => 200], ['throughput' => 11, 'runtime' => 338]],
+        ] as $queue => $snapshots) {
+            foreach ($snapshots as $score => $snapshot) {
+                $connection->zadd('snapshot:queue:'.$queue, $score, json_encode($snapshot));
+            }
+        }
+
+        $this->assertSame('fast', $repository->queueWithMaximumThroughput());
+        $this->assertSame('slow', $repository->queueWithMaximumRuntime());
+    }
+
     public function test_snapshot_does_not_fail_when_hmget_returns_null()
     {
         $connection = Mockery::mock();
@@ -239,5 +264,34 @@ class MetricsTest extends IntegrationTest
         $this->assertSame(CarbonImmutable::now()->getTimestamp() - 1, $snapshots[23]->time);
 
         CarbonImmutable::setTestNow();
+    }
+
+    public function test_metrics_can_be_cleared()
+    {
+        if (getenv('REDIS_CLUSTER_HOSTS_AND_PORTS')) {
+            $this->markTestSkipped('Test is for standalone Redis connections.');
+        }
+
+        Queue::push(new Jobs\BasicJob);
+        $this->work();
+
+        resolve(MetricsRepository::class)->snapshot();
+
+        // Work another job so live "job:*" and "queue:*" hashes exist alongside the snapshots...
+        Queue::push(new Jobs\BasicJob);
+        $this->work();
+
+        $this->assertNotEmpty(resolve(MetricsRepository::class)->measuredJobs());
+        $this->assertNotEmpty(resolve(MetricsRepository::class)->snapshotsForJob(Jobs\BasicJob::class));
+        $this->assertSame(1, resolve(MetricsRepository::class)->throughputForJob(Jobs\BasicJob::class));
+
+        resolve(MetricsRepository::class)->clear();
+
+        $this->assertEmpty(resolve(MetricsRepository::class)->measuredJobs());
+        $this->assertEmpty(resolve(MetricsRepository::class)->measuredQueues());
+        $this->assertEmpty(resolve(MetricsRepository::class)->snapshotsForJob(Jobs\BasicJob::class));
+        $this->assertEmpty(resolve(MetricsRepository::class)->snapshotsForQueue('default'));
+        $this->assertSame(0, resolve(MetricsRepository::class)->throughputForJob(Jobs\BasicJob::class));
+        $this->assertSame(0, resolve(MetricsRepository::class)->throughputForQueue('default'));
     }
 }
